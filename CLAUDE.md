@@ -10,8 +10,7 @@ ASalvoCreative started as a business in high school and grew into a media produc
 
 We use Claude Code with structured agent orientation (this file) and are adopting the Ralph Wiggum technique for autonomous overnight work loops.
 
-The site: asalvocreative.com
-Hero line: "Building seriously with AI."
+Our current website tagline: "Building seriously with AI."
 
 ## Public-facing policy
 
