@@ -6,7 +6,9 @@ Read this file fully before doing anything.
 
 Andy Salvo is a student at Penn State's Smeal College of Business with a background in creative media production, sports videography, and content strategy. He is passionate about AI.
 
-ASalvoCreative started as a business in high school and grew into a media production company. Now it is becoming an AI company. We teach people how to use AI -- not from theory, but from the research we do to train the agents that help run our own company. The way we learn is the way we teach.
+ASalvoCreative started as a business in high school and grew into a media production company. Now it is becoming an AI company. We use AI agents to run our own operations -- research, planning, content -- and we are building toward publishing what we learn so others can do the same. The way we build is the way we will teach.
+
+We use Claude Code with structured agent orientation (this file) and are adopting the Ralph Wiggum technique for autonomous overnight work loops.
 
 The site: asalvocreative.com
 Hero line: "Building seriously with AI."
@@ -35,3 +37,4 @@ If it is not ready to be seen by a recruiter, investor, or stranger, it does not
 
 - README.md -- public-facing overview
 - docs/WHY-AI.md -- core thesis and quote corpus
+- docs/PRD.md -- launch-ready acceptance criteria

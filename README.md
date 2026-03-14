@@ -1,29 +1,25 @@
 # ASalvoCreative AI
 
-ASalvoCreative AI helps people who haven't seriously used AI yet become fluent in it.
-
-We help people who haven't seriously used AI yet -- small business owners, creative professionals, students -- become fluent in it. We start with free training because the biggest barrier to AI adoption isn't cost or intelligence. It's that nobody has explained it well enough yet. We use the same tools we teach.
-
-Founded 2026.
+Building seriously with AI.
 
 ---
 
-## Repository policy
+## What's in this repo
 
-This repository is public. Everything here is intentionally public-facing. No secrets, no drafts, no half-baked ideas. If it's not ready to be seen, it doesn't get pushed.
+This is the public-facing foundation for ASalvoCreative AI. Everything here is intentional -- no drafts, no placeholders, no half-baked ideas.
 
-## What's here
+- **[docs/WHY-AI.md](docs/WHY-AI.md)** -- A sourced collection of what leaders across tech, finance, and entertainment are saying about AI, and why it matters.
+- **[docs/PRD.md](docs/PRD.md)** -- The acceptance criteria for what "launch-ready" means for asalvocreative.com.
+- **[CLAUDE.md](CLAUDE.md)** -- How AI agents operate inside this repo. This file orients every Claude Code session that touches the codebase.
 
-```
-docs/           Working documents and the AI education corpus
-CLAUDE.md       Agent orientation for AI tools working in this repo
-```
+## What ASalvoCreative AI is
 
-## Where to start
+ASalvoCreative started as a business in high school and grew into a media production company. Now it is becoming an AI company.
 
-- `docs/WHY-AI.md` -- the core thesis: why AI matters and who is saying it
-- `CLAUDE.md` -- how AI agents operate inside this repo
+We use AI agents to run our own operations -- including autonomous loops that research and build while we sleep. We are building toward publishing what we learn so others can do the same. The biggest barrier to AI adoption is not cost or intelligence -- it is that nobody has explained it well enough yet.
 
 ## Current state
 
-Early. Clear direction. Growing.
+Active. Pre-launch. Everything here is real.
+
+Founded 2026.
