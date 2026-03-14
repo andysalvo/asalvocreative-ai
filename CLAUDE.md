@@ -2,18 +2,11 @@
 
 Read this file fully before doing anything.
 
-## Who Andy is
+## Who we are
 
-Andy Salvo. 19. Penn State, Smeal College of Business (Accounting), Class of 2029. GPA 3.69.
-Founder of ASalvoCreative AI and the Applied AI Club at Penn State.
-Background in creative media production, sports videography, content strategy.
-Built Founderos -- a bounded AI agent platform with governance, decision logs, and a paper-trading proof application (github.com/andysalvo/founderos).
+Andy Salvo is a student at Penn State's Smeal College of Business with a background in creative media production, sports videography, and content strategy. He is passionate about AI.
 
-## What ASalvoCreative AI is
-
-We help people who haven't seriously used AI yet -- small business owners, creative professionals, students -- become fluent in it.
-
-North star: the biggest barrier to AI adoption is not cost or intelligence. It is that nobody has explained it well enough yet.
+ASalvoCreative started as a business in high school and grew into a media production company. Now it is becoming an AI company. We teach people how to use AI -- not from theory, but from the research we do to train the agents that help run our own company. The way we learn is the way we teach.
 
 The site: asalvocreative.com
 Hero line: "Building seriously with AI."
