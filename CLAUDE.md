@@ -11,7 +11,7 @@ Built Founderos -- a bounded AI agent platform with governance, decision logs, a
 
 ## What ASalvoCreative AI is
 
-An AI fluency studio. We help people who haven't seriously used AI yet -- small business owners, creative professionals, students -- become fluent in it.
+We help people who haven't seriously used AI yet -- small business owners, creative professionals, students -- become fluent in it.
 
 North star: the biggest barrier to AI adoption is not cost or intelligence. It is that nobody has explained it well enough yet.
 
@@ -35,10 +35,10 @@ If it is not ready to be seen by a recruiter, investor, or stranger, it does not
 ## Current active focus
 
 1. Building the AI education corpus (docs/WHY-AI.md)
-2. Developing the asalvocreative.com site into a credible AI fluency studio presence
+2. Developing asalvocreative.com into a credible public presence
 3. Presenting the Applied AI Club at Dan and Robyn Ives AI Innovation Day, March 19, 2026
 
 ## Key files
 
-- README.md -- public-facing studio overview
+- README.md -- public-facing overview
 - docs/WHY-AI.md -- core thesis and quote corpus

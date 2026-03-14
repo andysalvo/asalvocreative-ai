@@ -30,6 +30,21 @@ The thesis: AI is the most consequential tool available right now. Most people a
 > "We are completely convinced the consequences will be extraordinary and possibly as transformational as some of the major technological inventions of the past several hundred years: Think the printing press, the steam engine, electricity, computing and the Internet."
 > — JPMorgan Chase Letter to Shareholders, 2024
 
+**Bill Gates, Co-founder of Microsoft:**
+> "I knew I had just seen the most important advance in technology since the graphical user interface."
+> — "The Age of AI Has Begun," GatesNotes, March 21, 2023
+> https://www.gatesnotes.com/The-Age-of-AI-Has-Begun
+
+**Sundar Pichai, CEO of Google and Alphabet:**
+> "AI is probably the most important thing humanity has ever worked on. I think of it as something more profound than electricity or fire."
+> — World Economic Forum, Davos, January 24, 2018
+> https://9to5google.com/2018/01/24/google-sundar-pichai-wef-davos-2018/
+
+**Jensen Huang, Founder and CEO of NVIDIA:**
+> "AI is an industrial revolution, and this is the most important technology of our time, potentially the most important technology of all time."
+> — Fox Business, "Sunday Morning Futures," November 2, 2025
+> https://www.foxbusiness.com/media/nvidia-leads-americas-ai-industrial-revolution-major-manufacturing-move
+
 ---
 
 ## What people outside tech are doing about it

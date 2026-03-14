@@ -1,6 +1,6 @@
 # ASalvoCreative AI
 
-ASalvoCreative AI is an AI fluency studio.
+ASalvoCreative AI helps people who haven't seriously used AI yet become fluent in it.
 
 We help people who haven't seriously used AI yet -- small business owners, creative professionals, students -- become fluent in it. We start with free training because the biggest barrier to AI adoption isn't cost or intelligence. It's that nobody has explained it well enough yet. We use the same tools we teach.
 
