@@ -23,8 +23,8 @@ The thesis: AI is the most consequential tool available right now. Most people a
 > — TED2025, April 2025
 
 **Demis Hassabis, CEO of Google DeepMind:**
-> "It's going to be 10 times bigger than the Industrial Revolution, and maybe 10 times faster."
-> — The Guardian, August 2025
+> "It'll be 10 times bigger than the Industrial Revolution — and maybe 10 times faster."
+> — The Guardian, August 4, 2025
 
 **Jamie Dimon, CEO of JPMorgan Chase:**
 > "We are completely convinced the consequences will be extraordinary and possibly as transformational as some of the major technological inventions of the past several hundred years: Think the printing press, the steam engine, electricity, computing and the Internet."
@@ -45,7 +45,7 @@ The point: it is not just technologists who are building with AI. People in ever
 
 ## What this means for skills
 
-The World Economic Forum's Future of Jobs Report 2025 lists AI literacy as a top in-demand skill through 2030. The half-life of skills has dropped from 30 years to 7. That means the average career now requires five complete skill rebuilds.
+The World Economic Forum's Future of Jobs Report 2025 lists "AI and big data" as the number-one fastest-growing skill through 2030. The half-life of skills has dropped from roughly 30 years to about 5, according to figures widely cited by Deloitte and WEF-adjacent research.
 
 The people who can explain AI to non-technical audiences — clearly, without condescension, with real examples — are among the most valuable people in any organization right now.
 
