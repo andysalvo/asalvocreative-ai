@@ -1,45 +1,29 @@
-# ASalvo Creative AI
+# ASalvoCreative AI
 
-ASalvo Creative AI is a company applying creative craft to AI systems and products.
+ASalvoCreative AI is an AI fluency studio.
 
-We started in creative work. Now we build with AI.
+We help people who haven't seriously used AI yet -- small business owners, creative professionals, students -- become fluent in it. We start with free training because the biggest barrier to AI adoption isn't cost or intelligence. It's that nobody has explained it well enough yet. We use the same tools we teach.
+
+Founded 2026.
 
 ---
 
-## What this is
+## Repository policy
 
-This repository is the operational and intellectual home of ASalvo Creative AI. It contains the company's working documents, product development, AI education corpus, and the tools we build and use internally.
+This repository is public. Everything here is intentionally public-facing. No secrets, no drafts, no half-baked ideas. If it's not ready to be seen, it doesn't get pushed.
 
-This is not a polished public product. It is a real working system that grows as the company grows.
-
-## What we are building
-
-We believe most people are not close to the edge of what AI can do for them. The gap is not intelligence — it is access, clarity, and trust. ASalvo Creative AI exists to close that gap: by building products, writing clearly, and showing the work.
-
-Current focus:
-- An open-source AI education corpus explaining why AI matters and how to use it
-- Internal tooling and workflows built on Claude Code and MCP
-- Public-facing products and services, developed in the open
-
-## What this is not
-
-This is not a finished company with a full product suite. It is a real, early-stage studio with a clear direction and honest documentation of where it stands.
-
-## Repository structure
+## What's here
 
 ```
-docs/          Working documents, research, and the AI education corpus
-products/      Product development and internal tools
-career/        Public-profile snapshots aligned to repo state
-CLAUDE.md      Orientation file for AI agents working in this repo
+docs/           Working documents and the AI education corpus
+CLAUDE.md       Agent orientation for AI tools working in this repo
 ```
 
 ## Where to start
 
-- `CLAUDE.md` for full agent orientation
-- `docs/WHY-AI.md` for the company's core thesis
-- `docs/NORTH-STAR.md` for current direction and active focus
+- `docs/WHY-AI.md` -- the core thesis: why AI matters and who is saying it
+- `CLAUDE.md` -- how AI agents operate inside this repo
 
 ## Current state
 
-Founded March 2026. Early. Building in public.
+Early. Clear direction. Growing.
