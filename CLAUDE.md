@@ -25,6 +25,7 @@ If it is not ready to be seen by a recruiter, investor, or stranger, it does not
 - Do not create files speculatively. Build what is needed now.
 - When in doubt: do less, document clearly, flag to Andy.
 - Never push anything that violates the public-facing policy.
+- docs/WHY-AI.md works in amendments. Never delete content from it. You may improve, correct, or expand entries, but canonical truth is always preserved. Every fact and quote must be sourced and verifiable.
 
 ## Current active focus
 
@@ -36,4 +37,5 @@ If it is not ready to be seen by a recruiter, investor, or stranger, it does not
 
 - README.md -- public-facing overview
 - docs/WHY-AI.md -- core thesis and quote corpus
+- docs/AI-VOCABULARY.md -- tiered AI vocabulary guide (35 terms)
 - docs/PRD.md -- launch-ready acceptance criteria

@@ -9,6 +9,7 @@ Building seriously with AI.
 This is the public-facing foundation for ASalvoCreative AI. Everything here is intentional -- no drafts, no placeholders, no half-baked ideas.
 
 - **[docs/WHY-AI.md](docs/WHY-AI.md)** -- A sourced collection of what leaders across tech, finance, and entertainment are saying about AI, and why it matters.
+- **[docs/AI-VOCABULARY.md](docs/AI-VOCABULARY.md)** -- 35 words you need to know to talk about AI in 2026, in three tiers from beginner to advanced.
 - **[docs/PRD.md](docs/PRD.md)** -- The acceptance criteria for what "launch-ready" means for asalvocreative.com.
 - **[CLAUDE.md](CLAUDE.md)** -- How AI agents operate inside this repo. This file orients every Claude Code session that touches the codebase.
 

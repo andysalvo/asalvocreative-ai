@@ -1,6 +1,8 @@
 # Why AI Matters
 
-This document is the intellectual seed of ASalvo Creative AI. It grows over time.
+This document is the intellectual seed of ASalvoCreative AI. It grows over time.
+
+**Amendment policy:** This document works in amendments. Nothing conceptually should ever be removed. Entries can be improved, corrected, or expanded, but canonical truth is preserved. Every fact and quote must be sourced and verifiable. This corpus is meant to stand the test of time.
 
 The thesis: AI is the most consequential tool available right now. Most people are not close to the edge of what it can do for them. The people who close that gap first — for themselves and for others — will define the next decade of every industry.
 
@@ -72,4 +74,4 @@ That is what ASalvo Creative AI is building toward.
 
 We started in creative work. We know what it takes to explain something difficult in a way people can feel. We are applying that same craft to AI.
 
-This document will grow. Add to it when you find something worth keeping.
+This document will grow. Add to it when you find something worth keeping. Never remove what came before — only build on it.
