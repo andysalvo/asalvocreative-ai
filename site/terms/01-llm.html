@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --steel-deep: #1e2d3c;
+  --steel-mid: #2d4b5a;
+  --steel-muted: #4a6070;
+  --steel-pale: #8aa0ae;
+  --white: #ffffff;
+  --off-white: #f8f8f7;
+  --text-primary: #1a1a18;
+  --text-secondary: #4a4a46;
+  --text-muted: #8a8a84;
+  --border-light: rgba(30,45,60,0.08);
+  --border-mid: rgba(30,45,60,0.15);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  color: var(--text-primary);
+  background: transparent;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Both views fill the full iframe height */
+#card-view, #detail-view {
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#detail-view { display: none; }
+
+.card-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 32px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.card-number {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--steel-pale);
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(1.75rem, 4.5vw, 2.5rem);
+  letter-spacing: -0.01em;
+  color: var(--steel-deep);
+  line-height: 1.15;
+  margin-bottom: 24px;
+  transition: color 0.2s;
+}
+
+.card-inner:hover .card-title { color: var(--steel-mid); }
+
+.card-summary {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 600px;
+  flex: 1;
+}
+
+.card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--steel-mid);
+  margin-top: 32px;
+  transition: gap 0.2s;
+}
+
+.card-inner:hover .card-cta { gap: 10px; }
+
+.card-cta svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+}
+
+/* Detail view */
+.detail-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 32px 48px;
+}
+
+.detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--steel-mid);
+  padding: 0;
+  margin-bottom: 32px;
+  transition: color 0.2s;
+}
+
+.detail-back:hover { color: var(--steel-deep); }
+
+.detail-back svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+}
+
+.detail-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  letter-spacing: -0.01em;
+  color: var(--steel-deep);
+  line-height: 1.2;
+  margin-bottom: 28px;
+}
+
+.detail-body p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.detail-body p:last-child { margin-bottom: 0; }
+.detail-body strong { font-weight: 500; color: var(--text-primary); }
+
+.detail-sources {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-light);
+}
+
+.detail-sources-label {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.detail-sources ul { list-style: none; padding: 0; }
+
+.detail-sources li {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 3px;
+  font-weight: 300;
+}
+
+.detail-sources a {
+  color: var(--steel-mid);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.detail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--white);
+  background: var(--steel-mid);
+  padding: 0.65rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.detail-link:hover { background: var(--steel-deep); }
+
+.detail-link svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+}
+
+@media (max-width: 600px) {
+  .card-inner { padding: 32px 20px; }
+  .card-title { font-size: 1.6rem; }
+  .card-summary { font-size: 1rem; }
+  .detail-inner { padding: 28px 20px 40px; }
+  .detail-title { font-size: 1.4rem; }
+  .detail-body p { font-size: 0.95rem; }
+}
+</style>
+</head>
+<body>
+
+<div id="card-view">
+  <div class="card-inner" onclick="showDetail()">
+    <span class="card-number">Concept 01</span>
+    <h2 class="card-title">LLM<br>(Large Language Model)</h2>
+    <p class="card-summary">Every major AI tool -- ChatGPT, Claude, Gemini -- is powered by an LLM. An LLM is a program that has read essentially the entire public internet and learned the patterns of how language works. It does not "know" things the way a person does. It predicts what word comes next based on everything it has ever read.</p>
+    <span class="card-cta">Read full explanation <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><polyline points="9 6 15 12 9 18"></polyline></svg></span>
+  </div>
+</div>
+
+<div id="detail-view">
+  <div class="detail-inner">
+    <button class="detail-back" onclick="showCard()">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      Back
+    </button>
+    <h2 class="detail-title">LLM (Large Language Model)</h2>
+    <div class="detail-body">
+      <p>Every major AI tool -- ChatGPT, Claude, Gemini -- is powered by an LLM. It predicts what word comes next based on everything it has ever read. The reason it feels intelligent is that predicting language well requires understanding context, logic, and reasoning.</p>
+      <p>The "large" part refers to parameters -- internal variables the model adjusts during training. GPT-3 had 175 billion. GPT-4 reportedly uses 1.76 trillion through a Mixture of Experts architecture: eight sub-models, each 220 billion parameters, with a routing layer that sends each query to the right specialists. But bigger is not always smarter -- Google's Chinchilla outperformed GPT-3 at less than half the size by training on better data.</p>
+    </div>
+    <a class="detail-link" href="https://asalvocreative.com/ai/llm" target="_blank" rel="noopener">
+      Read the full explanation
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><polyline points="9 6 15 12 9 18"></polyline></svg>
+    </a>
+  </div>
+</div>
+
+<script>
+var cardView = document.getElementById('card-view');
+var detailView = document.getElementById('detail-view');
+
+function showDetail() {
+  cardView.style.display = 'none';
+  detailView.style.display = 'block';
+  detailView.scrollTop = 0;
+}
+
+function showCard() {
+  detailView.style.display = 'none';
+  cardView.style.display = 'block';
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --steel-deep: #1e2d3c;
+  --steel-mid: #2d4b5a;
+  --steel-muted: #4a6070;
+  --steel-pale: #8aa0ae;
+  --white: #ffffff;
+  --off-white: #f8f8f7;
+  --text-primary: #1a1a18;
+  --text-secondary: #4a4a46;
+  --text-muted: #8a8a84;
+  --border-light: rgba(30,45,60,0.08);
+  --border-mid: rgba(30,45,60,0.15);
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  color: var(--text-primary);
+  background: transparent;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+#card-view, #detail-view {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+#detail-view { display: none; }
+
+.entry {
+  padding: 44px 0;
+  cursor: pointer;
+}
+
+.entry-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.entry-number {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--steel-pale);
+  min-width: 28px;
+  padding-top: 5px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.entry-content { flex: 1; }
+
+.entry-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+  letter-spacing: -0.01em;
+  color: var(--steel-deep);
+  line-height: 1.2;
+  margin-bottom: 10px;
+  transition: color 0.2s;
+}
+
+.entry:hover .entry-title { color: var(--steel-mid); }
+
+.entry-summary {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.entry-arrow {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.entry-arrow svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--steel-pale);
+  transition: stroke 0.2s, transform 0.2s;
+}
+
+.entry:hover .entry-arrow svg {
+  stroke: var(--steel-mid);
+  transform: translateX(2px);
+}
+
+.detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--steel-mid);
+  padding: 0;
+  margin: 16px 0 36px;
+  transition: color 0.2s;
+}
+
+.detail-back:hover { color: var(--steel-deep); }
+
+.detail-back svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+}
+
+.detail-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  letter-spacing: -0.01em;
+  color: var(--steel-deep);
+  line-height: 1.2;
+  margin-bottom: 28px;
+}
+
+.detail-body p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.detail-body p:last-child { margin-bottom: 0; }
+.detail-body strong { font-weight: 500; color: var(--text-primary); }
+
+.detail-sources {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-light);
+}
+
+.detail-sources-label {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.detail-sources ul { list-style: none; padding: 0; }
+
+.detail-sources li {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 3px;
+  font-weight: 300;
+}
+
+.detail-sources a {
+  color: var(--steel-mid);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-light);
+  transition: border-color 0.2s;
+}
+
+.detail-sources a:hover { border-color: var(--steel-mid); }
+
+.detail-footer {
+  margin-top: 36px;
+  padding-bottom: 24px;
+}
+
+@media (max-width: 600px) {
+  #card-view, #detail-view { padding: 0 12px; }
+  .entry { padding: 32px 0; }
+  .entry-number { display: none; }
+  .entry-header { gap: 10px; }
+  .entry-title { font-size: 1.2rem; }
+  .entry-summary { font-size: 0.93rem; }
+  .detail-body p { font-size: 0.95rem; }
+  .detail-title { font-size: 1.4rem; margin-bottom: 22px; }
+  .detail-back { margin: 12px 0 28px; }
+}
+</style>
+</head>
+<body>
+
+<div id="card-view">
+  <article class="entry" onclick="showDetail()">
+    <div class="entry-header">
+      <span class="entry-number">02</span>
+      <div class="entry-content">
+        <h2 class="entry-title">Token</h2>
+        <p class="entry-summary">LLMs do not process words. They process tokens -- small chunks of text, roughly three-quarters of a word on average.</p>
+      </div>
+      <div class="entry-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><polyline points="9 6 15 12 9 18"></polyline></svg></div>
+    </div>
+  </article>
+</div>
+
+<div id="detail-view">
+  <button class="detail-back" onclick="showCard()">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    Back
+  </button>
+  <h2 class="detail-title">Token</h2>
+  <div class="detail-body">
+    <p>LLMs do not process words the way we read them. They process tokens, which are small chunks of text that the model treats as individual units. On average in English a token is roughly three-quarters of a word, so "the" is one token, "hamburger" is two tokens, "AI" is one token, and a short sentence runs about 10 tokens.</p>
+    <p>The way these tokens get created is through something called byte-pair encoding. Before a model is ever trained, the developers build a fixed vocabulary by scanning massive amounts of text and repeatedly merging the most common pairs of characters. Common words like "the" end up as single tokens. Less common words get split -- "tokenization" becomes "token" plus "ization." Once this vocabulary is locked in, it stays fixed for the life of the model.</p>
+    <p>This creates a real problem for languages other than English. Non-Latin scripts like Chinese, Japanese, Korean, and Arabic often require two to four times as many tokens to express the same meaning. The same question in Korean costs more and eats more context window than in English.</p>
+    <p>Tokens matter practically because they are the unit that everything in AI is priced and limited by. Companies charge separately for input tokens and output tokens. Output costs two to four times more. For flagship models as of early 2026, input runs about $3 per million tokens and output about $15 per million. Sending an entire novel as input costs roughly 40 cents.</p>
+  </div>
+  <div class="detail-sources">
+    <p class="detail-sources-label">Sources</p>
+    <ul>
+      <li><a href="https://platform.openai.com/tokenizer" target="_blank" rel="noopener">OpenAI Tokenizer</a></li>
+      <li>Petrov et al., "Language Model Tokenizers Introduce Unfairness Between Languages," NeurIPS 2023. <a href="https://arxiv.org/abs/2305.15425" target="_blank" rel="noopener">arxiv.org</a></li>
+    </ul>
+  </div>
+  <div class="detail-footer">
+    <button class="detail-back" onclick="showCard()">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      Back
+    </button>
+  </div>
+</div>
+
+<script>
+var cardView = document.getElementById('card-view');
+var detailView = document.getElementById('detail-view');
+
+function showDetail() {
+  cardView.style.display = 'none';
+  detailView.style.display = 'block';
+  window.scrollTo(0, 0);
+  if (window.parent) { try { window.parent.scrollTo(0, 0); } catch(e) {} }
+}
+
+function showCard() {
+  detailView.style.display = 'none';
+  cardView.style.display = 'block';
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --steel-deep: #1e2d3c;
+  --steel-mid: #2d4b5a;
+  --steel-muted: #4a6070;
+  --steel-pale: #8aa0ae;
+  --white: #ffffff;
+  --off-white: #f8f8f7;
+  --text-primary: #1a1a18;
+  --text-secondary: #4a4a46;
+  --text-muted: #8a8a84;
+  --border-light: rgba(30,45,60,0.08);
+  --border-mid: rgba(30,45,60,0.15);
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  color: var(--text-primary);
+  background: transparent;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+#card-view, #detail-view {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+#detail-view { display: none; }
+
+.entry {
+  padding: 44px 0;
+  cursor: pointer;
+}
+
+.entry-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.entry-number {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--steel-pale);
+  min-width: 28px;
+  padding-top: 5px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.entry-content { flex: 1; }
+
+.entry-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+  letter-spacing: -0.01em;
+  color: var(--steel-deep);
+  line-height: 1.2;
+  margin-bottom: 10px;
+  transition: color 0.2s;
+}
+
+.entry:hover .entry-title { color: var(--steel-mid); }
+
+.entry-summary {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.entry-arrow {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.entry-arrow svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--steel-pale);
+  transition: stroke 0.2s, transform 0.2s;
+}
+
+.entry:hover .entry-arrow svg {
+  stroke: var(--steel-mid);
+  transform: translateX(2px);
+}
+
+.detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--steel-mid);
+  padding: 0;
+  margin: 16px 0 36px;
+  transition: color 0.2s;
+}
+
+.detail-back:hover { color: var(--steel-deep); }
+
+.detail-back svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+}
+
+.detail-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  letter-spacing: -0.01em;
+  color: var(--steel-deep);
+  line-height: 1.2;
+  margin-bottom: 28px;
+}
+
+.detail-body p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.detail-body p:last-child { margin-bottom: 0; }
+.detail-body strong { font-weight: 500; color: var(--text-primary); }
+
+.detail-sources {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-light);
+}
+
+.detail-sources-label {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.detail-sources ul { list-style: none; padding: 0; }
+
+.detail-sources li {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 3px;
+  font-weight: 300;
+}
+
+.detail-sources a {
+  color: var(--steel-mid);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-light);
+  transition: border-color 0.2s;
+}
+
+.detail-sources a:hover { border-color: var(--steel-mid); }
+
+.detail-footer {
+  margin-top: 36px;
+  padding-bottom: 24px;
+}
+
+@media (max-width: 600px) {
+  #card-view, #detail-view { padding: 0 12px; }
+  .entry { padding: 32px 0; }
+  .entry-number { display: none; }
+  .entry-header { gap: 10px; }
+  .entry-title { font-size: 1.2rem; }
+  .entry-summary { font-size: 0.93rem; }
+  .detail-body p { font-size: 0.95rem; }
+  .detail-title { font-size: 1.4rem; margin-bottom: 22px; }
+  .detail-back { margin: 12px 0 28px; }
+}
+</style>
+</head>
+<body>
+
+<div id="card-view">
+  <article class="entry" onclick="showDetail()">
+    <div class="entry-header">
+      <span class="entry-number">07</span>
+      <div class="entry-content">
+        <h2 class="entry-title">Context Engineering</h2>
+        <p class="entry-summary">A prompt is the instruction. Context engineering is everything around it -- the information, examples, and constraints the model sees before responding.</p>
+      </div>
+      <div class="entry-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><polyline points="9 6 15 12 9 18"></polyline></svg></div>
+    </div>
+  </article>
+</div>
+
+<div id="detail-view">
+  <button class="detail-back" onclick="showCard()">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    Back
+  </button>
+  <h2 class="detail-title">Context Engineering</h2>
+  <div class="detail-body">
+    <p>A prompt is "write a blog post." Context engineering is providing the brand voice guide, the target audience, three examples of strong posts, the topic, and constraints -- and then asking the model to write. Same request. Dramatically different output.</p>
+    <p>The AI research community landed on an important finding in 2025: the quality of what an AI produces depends more on the quality of the context you give it than on how cleverly you phrase the question. Andrej Karpathy put it directly: people think of prompts as short task descriptions, but the real work is everything else you set up around that instruction.</p>
+    <p>This matters even more for agents. An agent might run dozens of steps. Every piece of information it carries competes for attention in a fixed context window. As that window fills up, recall drops. Anthropic calls this "context rot."</p>
+    <p>The practical techniques: write system prompts at "the right altitude." Use few-shot examples. Design tools to be self-contained. Use just-in-time retrieval. Compress long contexts through summarization or sub-agent handoffs.</p>
+    <p>The shift from "prompt engineering" to "context engineering" marks the moment the field recognized that the hard part is not writing the instruction. It is designing everything around it.</p>
+  </div>
+  <div class="detail-sources">
+    <p class="detail-sources-label">Sources</p>
+    <ul>
+      <li>Karpathy, X, June 2025. <a href="https://x.com/karpathy/status/1937902205765607626" target="_blank" rel="noopener">x.com/karpathy</a></li>
+      <li>Anthropic, "Effective context engineering for AI agents," September 2025. <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" target="_blank" rel="noopener">anthropic.com</a></li>
+    </ul>
+  </div>
+  <div class="detail-footer">
+    <button class="detail-back" onclick="showCard()">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      Back
+    </button>
+  </div>
+</div>
+
+<script>
+var cardView = document.getElementById('card-view');
+var detailView = document.getElementById('detail-view');
+
+function showDetail() {
+  cardView.style.display = 'none';
+  detailView.style.display = 'block';
+  window.scrollTo(0, 0);
+  if (window.parent) { try { window.parent.scrollTo(0, 0); } catch(e) {} }
+}
+
+function showCard() {
+  detailView.style.display = 'none';
+  cardView.style.display = 'block';
+}
+</script>
+
+</body>
+</html>
